@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meredith Adelaide</title>
+	<link rel='stylesheet' href='../css/reset.css'>
+	<link rel='stylesheet' href='../css/style.css'>
+</head>
+<body>
+	<div class='container'>
+<header>
+	<h1>Meredith Adelaide</h1>
+	<h2>555.555.5555</h2>
+	<h2>meredith@email.com</h2>
+	<nav>
+		<ul>
+			<li>
+				<a href='#'>Modeling</a>
+				<ul id="modeling-list">
+					<li>
+						<a href='#'>test</a>
+					</li>
+					<li>
+						<a href='#'>louie</a>
+					</li>
+					<li>
+						<a href='#'>ledger</a>
+					</li>
+					<li>
+						<a href='#'>wild thing</a>
+					</li>
+					<li>
+						<a href='#'>verily</a>
+					</li>
+					<li>
+						<a href='#'>coughlin</a>
+					</li>
+					<li>
+						<a href='#'>once wed</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href='#'>Print</a>
+			</li>
+			<li>
+				<a href='#'>Film</a>
+			</li>
+			<li>
+				<a href='#'>Self</a>
+			</li>
+			<li>
+				<a href='#'>Video</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+	<div class='main-picture'>Main Picture</div>
+	</div>
+</body>
+</html>
