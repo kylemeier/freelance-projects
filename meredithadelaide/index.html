@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Meredith Adelaide</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<link rel='stylesheet' href='css/reset.css'>
 	<link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-	<div class='container'>
+	<div class='page-container'>
 <header>
 	<nav class='menu'>
 		<ul>
@@ -26,34 +27,33 @@
 			<li>
 				<a href='#'>Video</a>
 			</li>
+			<li><a href="#">Blog</a></li>
 		</ul>
 	</nav>	
 	<div class='contact-info'>
 	<h2>Meredith Adelaide</h2>
-	<h2><span class='divider'>/ </span>555.555.5555</h2>
-	<h2><span class='divider'>/ </span>meredith@email.com</h2>
 	</div>
 </header>
-	<section class='main'>
-		<div class='tests'>
-			<div class='tests-img-container'>
-				<a href="#"><img src="images/modeling/1.jpg"></a>
-			</div>
-			<div class='tests-img-container'>
-				<a href="#"><img src="images/modeling/2.jpg"></a>
-			</div>
-			<div class='tests-img-container'>
-				<a href="#"><img src="images/modeling/3.jpg"></a>
-			</div>
-			<div class='tests-img-container'>
-				<a href="#"><img src="images/modeling/4.jpg"></a>
-			</div>
-			<div class='tests-img-container'>
-				<a href="#"><img src="images/modeling/5.jpg"></a>
+	<div id='image-container'>
+		<div id='image-pane'>
+			<!--images wouldnt size proportionally while in a ul, pulled them out -->
+			<div id='images'>
+				<img src="images/modeling/1.jpg">
+				<img src="images/modeling/2.jpg">
+				<img src="images/modeling/3.jpg">
+				<img src="images/modeling/4.jpg">
+				<img src="images/modeling/5.jpg">
+				<img src="images/modeling/6.jpg">
+				<img src="images/modeling/7.png">
 			</div>
 		</div>
-	</section>
+		<div id="scrollbar-track"><div id="scrollbar"></div></div>
+		
+	</div>
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src='js/jquery-ui-draggable.js'></script>
+	<script src='js/jquery.mousewheel.js'></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
