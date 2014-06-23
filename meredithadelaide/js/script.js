@@ -6,30 +6,56 @@
 // 	$(document).scrollLeft(0);
 // 	$('.image-pane').css('left',scrolling + 'px');
 // 	});
-// 	
-	$(function(){
-	function init(){
-		if($(window).width() > 800){
-			setWidth();
-		}
-	}
+	// var isMobile = {
+	//     Android: function() {
+	//         return navigator.userAgent.match(/Android/i);
+	//     },
+	//     BlackBerry: function() {
+	//         return navigator.userAgent.match(/BlackBerry/i);
+	//     },
+	//     iOS: function() {
+	//         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	//     },
+	//     Opera: function() {
+	//         return navigator.userAgent.match(/Opera Mini/i);
+	//     },
+	//     Windows: function() {
+	//         return navigator.userAgent.match(/IEMobile/i);
+	//     },
+	//     any: function() {
+	//         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+	//     }
+	// };
+
 	function setWidth(){
-		var imagesWidth = 0;
+		
+		if($(window).width() < 800){
+			$('#images').css('width','100%');
+
+		}else{
+
+		var imagesWidth = 1;
 		$('#images').children().each(function(){
 			imagesWidth += $(this).width();
 		});
-		$('#images').width(imagesWidth);
+			$('#images').width(imagesWidth);
+			$('#images').removeClass('invisible');
+			$('#images').addClass('visible');
+		}
 	}
 
-	init();
-
 	$(window).resize(function(){
-		if($(window).width() > 800){
-			init();
-		}else{
-			$('#images').css('width','100%');
-		}
+		setWidth();
 	});
-});
 	
+	function init(){
+		if($(window).width() < 800){
+			$('#images').removeClass('invisible');
+			$('#images').addClass('visible');
+			$('#images').css('width','100%');
+		}else{
+			setWidth();
+		}
+	}
+	window.onload = init;
 })();
