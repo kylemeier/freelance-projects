@@ -1,6 +1,5 @@
 (function(){
 //clean up scripts
-//copy setWidth script for height (used in mobile), set height on image-container
 
 	function setWidth(h){
 		//create firefox specific fix
@@ -51,11 +50,18 @@
 		}
 	});
 
-	$(document).on('click',function(event){
+	$(document).on('click','#icon-nav', function(event){
 		event.preventDefault();
 		$('.page-container').toggleClass('menu-open');
 	});
-		
+	
+	$(document).on('scroll',function(){
+		if($(document).scrollTop() > 700){
+			console.log('scrollToTop appears');
+		}else{
+			console.log('scrollToTop disappears');
+		}
+	});
 
 	function init(){
 		if($(window).width() < 800){
