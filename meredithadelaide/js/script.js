@@ -1,5 +1,7 @@
 (function(){
 //clean up scripts
+//consider having side nav slide over rest of screen
+	var menuOpen = 0;
 
 	function setWidth(h){
 		//create firefox specific fix
@@ -43,6 +45,8 @@
 		if($(window).width() < 800){
 			$('#images').css('width','100%');
 			setHeight($(window).width() *.8);
+			$('.page-container').removeClass('menu-open');
+			menuOpen = 0;
 
 		}else{
 			$('.page-container').css('height', '100%');
@@ -50,18 +54,27 @@
 		}
 	});
 
-	$(document).on('click','#icon-nav', function(event){
+		$(document).on('click','#sliding-content',function(event){
 		event.preventDefault();
-		$('.page-container').toggleClass('menu-open');
-	});
-	
-	$(document).on('scroll',function(){
-		if($(document).scrollTop() > 700){
-			console.log('scrollToTop appears');
-		}else{
-			console.log('scrollToTop disappears');
+		if(menuOpen === 1){
+			$('.page-container').removeClass('menu-open');
+			setTimeout(function(){
+				menuOpen = 0;
+			},500);
 		}
 	});
+
+	$(document).on('click','#icon-nav', function(event){
+		event.preventDefault();
+		if(menuOpen === 0){
+			$('.page-container').addClass('menu-open');
+			setTimeout(function(){
+				menuOpen = 1;
+			},500);
+		}
+	});
+	
+
 
 	function init(){
 		if($(window).width() < 800){

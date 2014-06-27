@@ -12,6 +12,17 @@
   font-weight: normal;
   font-style: normal; }
 
+[id^="icon-"] {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 #icon-nav:after {
   display: none; }
 
@@ -32,19 +43,11 @@ li {
 header {
   position: relative;
   width: 100%;
-  padding: 50px 0;
+  padding: 25px 0;
   margin-bottom: 25px;
   line-height: 25px;
   border-bottom: 1px solid rgba(124, 140, 141, 0.3); }
-
-.navbar-toggle {
-  position: relative;
-  z-index: 1; }
-
-.contact-info {
-  position: relative;
-  float: left; }
-  .contact-info h2 {
+  header h2 {
     float: left;
     padding-right: 5px;
     font-weight: normal; }
@@ -52,7 +55,8 @@ header {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-top: 50px; }
+  margin-top: 25px;
+  z-index: 1; }
   .navbar-toggle li {
     float: left;
     padding-right: 25px; }
@@ -67,7 +71,7 @@ header {
 #image-container {
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow-y: hidden;
   overflow-x: scroll; }
   #image-container #image-pane {
@@ -100,11 +104,9 @@ header {
   right: 200px !important; }
 
 #sliding-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; }
+  position: relative;
+  height: 80%;
+  width: 100%; }
 
 .placeholder {
   background: grey;
@@ -116,10 +118,40 @@ header {
   width: 100px;
   z-index: 0; }
 
+#contact-info {
+  position: relative;
+  top: 120px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7); }
+  #contact-info ul {
+    width: 145px;
+    margin: 0 auto; }
+  #contact-info li {
+    display: inline-block;
+    padding: 0 10px; }
+  #contact-info h2 {
+    color: #4C4C4C; }
+  #contact-info a:hover {
+    color: #4C4C4C; }
+
+@media (max-height: 800px) and (min-width: 800px) {
+  #contact-info {
+    top: 75px; } }
+#icon-instagram:after {
+  content: '\e600'; }
+
+#icon-facebook:after {
+  content: '\e608'; }
+
+#icon-twitter:after {
+  content: '\e607'; }
+
 @media (max-width: 799px) {
   #icon-nav:after {
     float: right;
-    font-family: 'icons';
     content: "\e603";
     font-size: 1.5em;
     display: block; }
@@ -136,6 +168,8 @@ header {
     color: #fff;
     border: none;
     z-index: 200;
+    font-size: 1.3em;
+    text-align: center;
     -webkit-transition: left 500ms ease;
     -moz-transition: left 500ms ease;
     -o-transition: left 500ms ease;
@@ -162,16 +196,9 @@ header {
   .menu-open #sliding-content {
     left: -192px; }
 
-  #sliding-content.menu-open {
-    left: -192px; }
-
-  .contact-info {
-    font-size: 1.3em;
-    text-align: center; }
-
   .navbar-toggle {
     position: fixed;
-    top: -50px;
+    top: -25px;
     right: 0;
     background: #6C6C70;
     color: #fff;
