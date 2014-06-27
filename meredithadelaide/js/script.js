@@ -45,10 +45,9 @@
 		if($(window).width() < 800){
 			$('#images').css('width','100%');
 			setHeight($(window).width() *.8);
+		}else{
 			$('.page-container').removeClass('menu-open');
 			menuOpen = 0;
-
-		}else{
 			$('.page-container').css('height', '100%');
 			setWidth($(window).height() *.8);
 		}
