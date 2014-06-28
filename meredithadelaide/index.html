@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>meredith adelaide</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<link rel='stylesheet' href='css/reset.css'>
 	<link rel='stylesheet' href='css/style.css'>
 </head>
@@ -28,15 +28,15 @@
 				</li>
 			</ul>
 		</nav>
-	<div id='sliding-content'>
+	<div id='sliding-container'>
 		<header>
 			<h2>meredith adelaide</h2>
 			<a href="#" id="icon-nav"></a>
 		</header>
-		<div id='image-container'>
-			<div id='image-pane'>
+		<div id='content-container'>
+			<div id='content-pane'>
 				<!--images not in a ul in order to resize them responsively with minimal CSS -->
-				<div id='images'>
+				<div id='content'>
 					<img alt='1.jpg' src='' data-src='images/modeling/1.jpg' data-owidth='614' data-oheight='984' class='invisible'>
 					<img alt='2.jpg' src='' data-src="images/modeling/2.jpg" data-owidth='638' data-oheight='984' class='invisible'>
 					<img alt='3.jpg' src='' data-src="images/modeling/3.jpg" data-owidth='611' data-oheight='984' class='invisible'>
@@ -54,6 +54,8 @@
 			</div>		
 		</div>
 	</div>
+	<a href='#' id='scroll-left'>scrollLeft</a>
+	<a href='#' id='scroll-right'>scrollRight</a>
 	<div id='contact-info'>
 		<h2>for booking: <a href='mailto:meredith.adelaide@gmail.com'>meredith.adelaide@gmail.com</a></h2>
 		<ul>
@@ -63,7 +65,8 @@
 		</ul>
 		
 	</div>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
