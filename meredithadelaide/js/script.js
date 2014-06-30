@@ -1,10 +1,13 @@
 (function(){
+	//see if content container is necessary
+	//create a second page and test out transition pages on mobile
+	//add in left-arrow / right-arrow
 
 	var menuOpen = 0,
 		contentLoaded = 0,
 		containerPercentage = .8,
 		$content = $('#content'),
-		$contentItems = $('#content').children(),
+		$contentItems = $('#content').find('img'),
 		$pageContainer = $('.page-container'),
 		$window = $(window);
 
@@ -16,8 +19,9 @@
 
 		//When the item loads, make it visible so it can fade in
 		item.bind('load', function(){
-			item.removeClass('invisible');
 			item.addClass('visible');
+			item.removeClass('invisible');
+			
 		});
 
 		//Give the item a source to load
@@ -86,6 +90,8 @@
 				//Width will be set by CSS
 				//Rounding to be consistent with jQuery's rounded .width() (which was used to calculate w)
 				itemHeight = Math.round(w / aspectRatio);
+				$item.parent().css('height',itemHeight);
+				$item.parent().css('width','100%');
 
 				//Return the height plus the padding added by CSS that wasn't captured here
 				return itemHeight + padding;
@@ -94,6 +100,8 @@
 
 				//If in desktop view, do the same as above except for the item's width
 				itemWidth = Math.round(aspectRatio * h);
+				$item.parent().css('width',itemWidth);
+				$item.parent().css('height','100%');
 
 				//Return a negative value so caller function can know whether it 
 				// received back a height (positive number) or a width (negative number)
@@ -138,11 +146,11 @@
 			$pageContainer.height(containerDimension);
 
 			//Set the content div to fill its parent's width
-			$content.css('width','100%');
+			$content.css('width','80%');
 
 		}else{
 			//Desktop view
-			//Set the width of the content div to fit all image/video elements
+			//Revert width back to a positive number and set the width of the content div to fit all image/video elements
 			$content.width(-containerDimension);
 
 			//Set page container height to only fill the window

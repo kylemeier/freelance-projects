@@ -69,29 +69,28 @@ header {
   .navbar-toggle .active {
     color: #4C4C4C; }
 
-#content-container {
-  position: relative;
-  width: 100%;
+#content-pane {
+  position: absolute;
   height: 100%;
-  overflow-y: hidden;
+  width: 100%;
   overflow-x: scroll; }
-  #content-container #content-pane {
+  #content-pane #content {
     position: absolute;
     height: 100%;
-    width: 100%;
-    overflow-x: scroll; }
-    #content-container #content-pane #content {
-      position: absolute;
+    left: 0; }
+    #content-pane #content img {
+      z-index: 100;
+      float: left;
       height: 100%;
-      left: 0; }
-      #content-container #content-pane #content img {
-        z-index: 100;
-        float: left;
-        height: 100%;
-        padding-right: 2px;
-        transition: opacity 1s ease-in-out; }
-        #content-container #content-pane #content img:last-child {
-          padding-right: 0; }
+      padding-right: 2px;
+      transition: opacity 1s ease-in-out; }
+      #content-pane #content img:last-child {
+        padding-right: 0; }
+
+.placeholder {
+  background: #EDEDED;
+  float: left;
+  margin-right: 2px; }
 
 .scroll {
   -webkit-transform: translate3d(10%, 0, 0); }
@@ -167,6 +166,10 @@ header {
     margin-right: -15px;
     top: 8px; }
 
+  .placeholder {
+    float: none;
+    margin-bottom: 2px; }
+
   header {
     margin: 0;
     padding: 10px 0;
@@ -230,26 +233,22 @@ header {
   a {
     color: #fff; }
 
-  #content-container {
+  #content-pane {
     width: 100%;
     height: 100%;
     overflow: visible;
     padding-top: 50px;
     background: #fff; }
-    #content-container #content-pane {
+    #content-pane #content {
       position: relative;
       height: 100%;
       width: 80%;
       padding: 0 10%; }
-      #content-container #content-pane #content {
-        position: relative;
-        height: 100%;
-        width: 100%; }
-        #content-container #content-pane #content img {
-          width: 100%;
-          padding: 0 0 2px 0;
-          height: auto;
-          background: #fff; }
+      #content-pane #content img {
+        width: 100%;
+        padding: 0 0 2px 0;
+        height: auto;
+        background: #fff; }
 
   #contact-info {
     position: fixed;
