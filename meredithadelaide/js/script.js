@@ -162,7 +162,13 @@
 
 		//Run config and tell it to load images/videos
 		config(1);
+		// $(window).load(function(){
+			// setTimeout(function(){
+			$('header').removeClass('invisible');
+			$('header').addClass('visible');
+			// },1000);
+		// });
 	}
-
-	init();
+	
+		init();	
 })();
