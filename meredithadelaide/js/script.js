@@ -1,7 +1,6 @@
 (function(){
-	//see if content container is necessary
 	//create a second page and test out transition pages on mobile
-	//add in left-arrow / right-arrow
+	//adjust contact info section
 
 	var menuOpen = 0,
 		contentLoaded = 0,
@@ -21,14 +20,14 @@
 		item.bind('load', function(){
 			item.addClass('visible');
 			item.removeClass('invisible');
-			
 		});
 
 		//Give the item a source to load
 		item.attr('src', item.attr('data-src'));
 	}
-	$(document).on('click','#scroll-right',function(event){
-		var scroll = Math.round($('#content').width() * .15);
+
+	$(document).on('click','#icon-scroll-right',function(event){
+		var scroll = $('#content-pane').width() +6;
 		event.preventDefault();
 
 			$('#content-pane').animate({
@@ -36,8 +35,8 @@
 			}, 700,'easeInOutQuad');
 	});
 
-	$(document).on('click','#scroll-left',function(event){
-		var scroll = Math.round($('#content').width() * .15);
+	$(document).on('click','#icon-scroll-left',function(event){
+		var scroll = $('#content-pane').width() +6;
 		event.preventDefault();
 
 			$('#content-pane').animate({
@@ -113,7 +112,7 @@
 	 * Capture values necessary to configure image/video elements and send values to the appropriate functions
 	 * @param  {binary} initializing: Tell config() whether or not the page is initializing or just being resized
 	 */
-	function config(initializing){
+	function configImages(initializing){
 
 		var $windowHeight = $window.height(),
 			$windowWidth = $window.width(),
@@ -158,25 +157,59 @@
 		}
 	}
 
+	function configVideos(initializing){		
+		if($window.width() > 800){
+			console.log('desktop view');
+			var adjustment = 0;
+			if(initializing){
+				
+				adjustment = 1;
+			}else{
+				adjustment = 1;
+			}
+				var height = $('#content-pane').height()*adjustment,
+				width = height * (16/9),
+				contentWidth = width*5+25;
+
+			// console.log($('#content-pane').
+				// $('#content-pane').css('height','75%');
+				$('.video-wrapper').css('width',width);
+				// $('.video-wrapper').css('height',height);
+				$('#content').css('width',contentWidth);
+				// $('#content-pane').css('height',height);
+		}else{
+			console.log('mobile');
+			$('#content-pane').css('width','100%');
+			$('#content').css('width','80%');
+			$('.video-wrapper').css('width','100%');
+
+		}
+
+	}
+
 	//Upon window resize, run config without loading images/videos
 	$window.resize(function(){
-		config(0);
+		if(document.URL.search('video')>0){
+			configVideos(0);
+				
+		}else{
+		configImages(0);
+		}
 	});
 
 	/**
 	 * Initilization function, runs all functions necessary to render page correctly on load
 	 */
 	function init(){
-
+		$pageContainer.removeClass('invisible');
+		$pageContainer.addClass('visible');
+		if(document.URL.search('video')>0){
+			$('body').addClass('video');
+			configVideos(1);
+		}else{
 		//Run config and tell it to load images/videos
-		config(1);
-		// $(window).load(function(){
-			// setTimeout(function(){
-			$('header').removeClass('invisible');
-			$('header').addClass('visible');
-			// },1000);
-		// });
+		configImages(1);
+		}
 	}
-	
-		init();	
+	init();	
 })();
