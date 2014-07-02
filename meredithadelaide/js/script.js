@@ -1,10 +1,14 @@
 (function(){
-	//create a second page and test out transition pages on mobile
 	//adjust contact info section
+	//double scrollbars on mobile video
+	//content width on video desktop is hardcoded
+	//video page needs height adjusted by an extra .75
+	//ios doesn't allow autoplay, show videos as normal
 
 	var menuOpen = 0,
 		contentLoaded = 0,
 		containerPercentage = .8,
+		containerPercentageVideo = 1,
 		$content = $('#content'),
 		$contentItems = $('#content').find('img'),
 		$pageContainer = $('.page-container'),
@@ -56,14 +60,25 @@
 	});
 
 	//Close mobile drawer nav if content on left is clicked
-	$(document).on('click','#sliding-container',function(event){
-		event.preventDefault();
+	$(document).on('click', '#sliding-container', function(){
 		if(menuOpen === 1){
 			$pageContainer.removeClass('menu-open');
 			setTimeout(function(){
 				menuOpen = 0;
 			},500);
 		}
+	});
+
+	$(document).on('click','.play-video', function(event){
+		event.preventDefault();
+		var videoURL = $(this).attr('href');
+		$('iframe').remove();
+		$('.play-video').show();
+		// alert($('.play-video').attr('href'));
+		$(this).parent().append(
+			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay=1\" frameBorder=\"0\" allowfullscreen></iframe>'
+			)
+		
 	});
 
 	/**
@@ -116,7 +131,7 @@
 
 		var $windowHeight = $window.height(),
 			$windowWidth = $window.width(),
-			containerHeightStatic = $windowHeight * containerPercentage,
+			containerHeightStatic = $windowHeight * containerPercentage * containerPercentageVideo,
 			containerWidthStatic = $windowWidth * containerPercentage,
 			containerDimension = 0;
 
@@ -189,12 +204,12 @@
 
 	//Upon window resize, run config without loading images/videos
 	$window.resize(function(){
-		if(document.URL.search('video')>0){
-			configVideos(0);
+		// if(document.URL.search('video')>0){
+		// 	configVideos(0);
 				
-		}else{
+		// }else{
 		configImages(0);
-		}
+		// }
 	});
 
 	/**
@@ -204,12 +219,11 @@
 		$pageContainer.removeClass('invisible');
 		$pageContainer.addClass('visible');
 		if(document.URL.search('video')>0){
+			containerPercentageVideo = .75;
 			$('body').addClass('video');
-			configVideos(1);
-		}else{
+		}
 		//Run config and tell it to load images/videos
 		configImages(1);
-		}
 	}
 	init();	
 })();
