@@ -2,7 +2,6 @@
 	//adjust contact info section
 	//double scrollbars on mobile video
 	//content width on video desktop is hardcoded
-	//video page needs height adjusted by an extra .75
 	//ios doesn't allow autoplay, show videos as normal
 
 	var menuOpen = 0,
@@ -15,8 +14,8 @@
 		$window = $(window);
 
 	/**
-	 * Fade in images/video elements on page
-	 * @param  {element} item: A image/video element
+	 * Fade in image elements on page
+	 * @param  {element} item: An image element
 	 */
 	function contentLoader(item){
 
@@ -86,7 +85,7 @@
 	 * @param {number} $windowWidth: Width of the view window
 	 * @param {number} h:            Height of the content container
 	 * @param {number} w:            Width of the content container
-	 * @param {element} $item:       A image/video element
+	 * @param {element} $item:       An image element
 	 * @return {number} the height or width of the item
 	 */
 	function setDimension($windowWidth, h, w, $item){
@@ -124,7 +123,7 @@
 	}
 	
 	/**
-	 * Capture values necessary to configure image/video elements and send values to the appropriate functions
+	 * Capture values necessary to configure image elements and send values to the appropriate functions
 	 * @param  {binary} initializing: Tell config() whether or not the page is initializing or just being resized
 	 */
 	function configImages(initializing){
@@ -135,12 +134,12 @@
 			containerWidthStatic = $windowWidth * containerPercentage,
 			containerDimension = 0;
 
-		//Cycle through all image/video elements on page
+		//Cycle through all image elements on page
 		$contentItems.each(function(){
 
 			var $this = $(this);
 
-			//If initializing, load images/video
+			//If initializing, load images
 			if(initializing){
 				contentLoader($this);
 			}
@@ -222,7 +221,7 @@
 			containerPercentageVideo = .75;
 			$('body').addClass('video');
 		}
-		//Run config and tell it to load images/videos
+		//Run config and tell it to load images
 		configImages(1);
 	}
 	init();	
