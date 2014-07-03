@@ -120,8 +120,9 @@ header {
     padding-right: 25px; }
     .navbar-toggle li:last-child {
       padding-right: 0; }
-  .navbar-toggle .active {
-    color: #C7C7C7; }
+
+.active {
+  color: #C7C7C7; }
 
 #content-container {
   position: absolute;
@@ -196,31 +197,14 @@ footer {
     font-size: .8em;
     float: left; }
 
-.video #content-pane {
-  height: 75%;
-  margin-top: 75px;
-  overflow-y: hidden; }
-
-.video-wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: inline-block; }
-
-.video-wrapper iframe, .video-wrapper object, .video-wrapper embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
+.video #content-container {
+  height: 60%; }
 
 iframe {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 5;
-  border: none;
-  outline: none; }
+  z-index: 5; }
 
 @media (max-width: 799px) {
   #icon-scroll-left, #icon-scroll-right {
@@ -234,10 +218,16 @@ iframe {
     position: absolute;
     right: 10%;
     margin-right: -15px;
-    top: 8px; }
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
 
   #icon-nav:hover {
     color: #fff; }
+
+  .page-container {
+    padding-bottom: 50px;
+    overflow: hidden; }
 
   .placeholder {
     float: none;
@@ -245,10 +235,10 @@ iframe {
 
   header {
     margin: 0;
+    line-height: 25px;
     padding: 10px 0;
     width: 100%;
     position: fixed;
-    top: 0px;
     left: 0px;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -260,14 +250,6 @@ iframe {
     -moz-transition: left .5s;
     -o-transition: left .5s;
     transition: left .5s; }
-    header h2 {
-      width: auto;
-      padding-right: 0; }
-
-  .page-container {
-    width: 100%;
-    margin-left: 0%;
-    height: 100%; }
 
   #sliding-container {
     z-index: 1;
@@ -287,35 +269,40 @@ iframe {
 
   .navbar-toggle {
     position: fixed;
-    top: -30px;
     right: 0;
     background: #6C6C70;
     color: #fff;
     font-size: 1.5em;
     height: 100%;
     width: 250px;
-    z-index: 0; }
+    z-index: 0;
+    padding: 0; }
     .navbar-toggle ul {
       padding: 40px 0 0 10%;
       width: 0;
       height: 100%;
       font-size: 1.9em; }
       .navbar-toggle ul li {
-        padding-bottom: 1%; }
+        line-height: 55px; }
 
   a {
     color: #fff; }
 
+  #content-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: visible;
+    padding-top: 100px;
+    background: #FAFAFA; }
+
   #content-pane {
     width: 100%;
     height: 100%;
-    overflow: visible;
-    padding-top: 50px;
-    background: #fff; }
+    overflow: visible; }
     #content-pane #content {
       position: relative;
       height: 100%;
-      width: 80%;
       padding: 0 10%; }
       #content-pane #content img {
         width: 100%;
@@ -323,44 +310,39 @@ iframe {
         height: auto;
         background: #fff; }
 
-  .video #content-pane {
-    height: 100%;
-    margin-top: 0;
-    overflow-y: scroll; }
-
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    padding-top: 25px;
-    height: 0; }
-
-  .video-wrapper iframe, .video-wrapper object, .video-wrapper embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .video #content-container {
     height: 100%; }
 
-  #contact-info, .video #contact-info {
+  footer {
     position: fixed;
     top: 350px;
     width: 225px;
     right: 12.5px;
     color: #fff;
     background: none;
-    border-top: 2px solid #fff; }
-    #contact-info h2, .video #contact-info h2 {
-      padding: 10px 0;
+    border-top: 2px solid #fff;
+    text-align: center;
+    padding: 0;
+    line-height: 30px; }
+    footer h2 {
+      float: none;
       color: #fff;
       font-size: 1.1em; }
-      #contact-info h2 a, .video #contact-info h2 a {
-        font-size: .9em; } }
+      footer h2 a {
+        font-size: .9em; }
+    footer h3 {
+      position: absolute;
+      bottom: 0;
+      right: 0; } }
 @media (max-width: 799px) and (max-height: 450px) {
   .navbar-toggle {
-    top: -50px; }
+    line-height: 35px; }
     .navbar-toggle ul {
+      position: absolute;
+      top: -25px;
       font-size: 1.2em; }
 
-  #contact-info, .video #contact-info {
-    top: 195px; } }
+  footer {
+    top: 195px; }
+    footer h3 {
+      top: 90px; } }
