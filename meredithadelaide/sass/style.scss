@@ -179,6 +179,7 @@ header{
 	height:100%;
 	width:100%;
 	overflow-x:scroll;
+	overflow-y:hidden;
 }
 
 #content{
@@ -257,6 +258,14 @@ footer{
 
 iframe{
 	position:relative;
+}
+
+@media(max-width: 960px) and (min-width:800px){
+	footer{
+		li{
+			padding:0;
+		}
+	}
 }
 
 @media(max-width: 799px){

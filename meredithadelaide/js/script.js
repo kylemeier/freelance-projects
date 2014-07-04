@@ -5,6 +5,7 @@
 		contentLoaded = 0,
 		containerPercentage = .8,
 		containerPercentageVideo = 1,
+		prevWidth = 0,
 		$content = $('#content'),
 		$contentItems = $('#content').find('img'),
 		$pageContainer = $('.page-container'),
@@ -14,16 +15,21 @@
 	 * Fade in image elements on page
 	 * @param  {element} item: An image element
 	 */
-	function contentLoader(item){
+	function contentLoader($item,$windowWidth){
 
 		//When the item loads, make it visible so it can fade in
-		item.bind('load', function(){
-			item.addClass('visible');
-			item.removeClass('invisible');
+		$item.bind('load', function(){
+			$item.addClass('visible');
+			$item.removeClass('invisible');
 		});
 
 		//Give the item a source to load
-		item.attr('src', item.attr('data-src'));
+		$item.attr('src', $item.attr('data-src'));
+
+		//load videos if in mobile view
+		if($windowWidth < 800){
+			showVideo($item.next(),0);
+		}
 	}
 
 	$(document).on('click','#icon-scroll-right',function(event){
@@ -65,16 +71,18 @@
 		}
 	});
 
+	function showVideo($item, autoPlay){
+		var videoURL = $item.attr('href');
+		$item.parent().append(
+			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+		)
+	}
+
 	$(document).on('click','.play-video', function(event){
 		event.preventDefault();
-		var videoURL = $(this).attr('href');
 		$('iframe').remove();
 		$('.play-video').show();
-		// alert($('.play-video').attr('href'));
-		$(this).parent().append(
-			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay=1\" frameBorder=\"0\" allowfullscreen></iframe>'
-			)
-		
+		showVideo($(this),1);
 	});
 
 	/**
@@ -123,7 +131,7 @@
 	 * Capture values necessary to configure image elements and send values to the appropriate functions
 	 * @param  {binary} initializing: Tell config() whether or not the page is initializing or just being resized
 	 */
-	function configImages(initializing){
+	function configImages(initializing,toDesktop,toMobile){
 
 		var $windowHeight = $window.height(),
 			$windowWidth = $window.width(),
@@ -138,7 +146,15 @@
 
 			//If initializing, load images
 			if(initializing){
-				contentLoader($this);
+				contentLoader($this,$windowWidth);
+			}
+
+			if(toDesktop){
+				$('iframe').remove();
+			}
+
+			if(toMobile){
+				showVideo($this.next(),0);
 			}
 
 			//Capture width or height of element
@@ -189,23 +205,29 @@
 				$('#content').css('width',contentWidth);
 				// $('#content-pane').css('height',height);
 		}else{
-			console.log('mobile');
 			$('#content-pane').css('width','100%');
 			$('#content').css('width','80%');
 			$('.video-wrapper').css('width','100%');
-
 		}
-
 	}
 
 	//Upon window resize, run config without loading images/videos
 	$window.resize(function(){
-		// if(document.URL.search('video')>0){
-		// 	configVideos(0);
-				
-		// }else{
-		configImages(0);
-		// }
+		var toDesktop = 0,
+			toMobile = 0;
+
+		//remove all videos if user is switching from mobile view to desktop view
+		if(prevWidth < 800 && $window.width() >= 800){
+			toDesktop = 1;
+		}
+
+		if(prevWidth >= 800 && $window.width() < 800){
+			toMobile = 1;
+		}
+
+		configImages(0,toDesktop,toMobile);
+		prevWidth = $window.width();
+
 	});
 
 	/**
