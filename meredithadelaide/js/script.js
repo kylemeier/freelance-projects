@@ -1,7 +1,4 @@
 (function(){
-	//adjust contact info section
-	//double scrollbars on mobile video
-	//content width on video desktop is hardcoded
 	//ios doesn't allow autoplay, show videos as normal
 
 	var menuOpen = 0,
