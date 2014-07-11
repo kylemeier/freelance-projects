@@ -1,5 +1,5 @@
 (function(){
-	//ios doesn't allow autoplay, show videos as normal
+	//refactor with a detectWidth function that returns toMobile, toDesktop, or the actual width
 
 	var menuOpen = 0,
 		contentLoaded = 0,
