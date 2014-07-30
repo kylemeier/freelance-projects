@@ -17,14 +17,14 @@
 					<ul>
 						<li><a href='modeling/black-and-white'>black and white</a></li>
 						<li><a href='modeling/color'>color</a></li>
-						<li><a href='#'>film</a></li>
-						<li><a href='#'>print</a></li>
+						<li><a href='modeling/film'>film</a></li>
+						<li><a href='modeling/print'>print</a></li>
 					</ul>
 				</li>
 				<li class='nav-item'>
 					<p>self</p>
 					<ul>
-						<li><a href="self/tied-up-and-tousled">tied up and tousled</a></li>
+						<li><a href="self/tied-up-and-touseled">tied up and touseled</a></li>
 						<li><a href="self/solestruck-bwkick">solestruck - b/w kick</a></li>
 						<li><a href="self/solestruck-yes">solestruck - ¥E§</a></li>
 						<li><a href="self/bridge-and-burn">bridge and burn</a></li>
