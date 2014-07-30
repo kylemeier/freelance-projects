@@ -49,14 +49,6 @@
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg); }
 
-.icon-dropdown:after {
-  content: '\e601';
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  display: inline-block;
-  position: relative;
-  top: 3px; }
-
 #icon-instagram:after {
   content: '\e600'; }
 
@@ -146,13 +138,13 @@ header {
       border: 1px solid #e1e2e3;
       border-top: 1px solid #fff;
       position: absolute;
-      width: 200px;
+      width: 150px;
       left: -5px;
       top: 50px; }
       .navbar-toggle li ul li {
         float: none;
-        padding-left: 10px;
         padding-right: 0;
+        padding-left: 10px;
         color: #D6D6D6; }
         .navbar-toggle li ul li:last-child {
           border-radius: 0 0 5px 5px; }
@@ -332,10 +324,22 @@ iframe {
     padding: 0;
     line-height: 55px; }
     .navbar-toggle ul {
-      padding: 40px 0 0 10%;
+      padding-top: 30px;
       width: 0;
       height: 100%;
       font-size: 1.9em; }
+      .navbar-toggle ul li ul {
+        background: none;
+        border: none;
+        position: relative;
+        font-size: .5em;
+        line-height: 30px;
+        top: 0;
+        padding: 0;
+        width: 250px; }
+        .navbar-toggle ul li ul li a {
+          padding-left: 30px;
+          left: -5px; }
 
   a {
     color: #fff; }
@@ -372,9 +376,9 @@ iframe {
     transition: opacity .5s;
     opacity: 0;
     position: fixed;
+    right: 12.5px;
     top: 350px;
     width: 225px;
-    right: 12.5px;
     color: #fff;
     background: none;
     border-top: 2px solid #fff;
@@ -401,8 +405,10 @@ iframe {
     line-height: 35px; }
     .navbar-toggle ul {
       position: absolute;
-      top: -25px;
       font-size: 1.2em; }
+      .navbar-toggle ul li ul li {
+        font-size: 1.5em;
+        line-height: 15px; }
 
   footer {
-    top: 195px; } }
+    display: none; } }

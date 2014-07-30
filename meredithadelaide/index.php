@@ -10,7 +10,32 @@
 </head>
 <body>
 	<div class='page-container invisible'>
-		<?php include('nav.html'); ?>
+		<nav class='navbar-toggle'>
+			<ul>
+				<li class='nav-item'>
+					<p>modeling</p>
+					<ul>
+						<li><a href='blackandwhite'>black and white</a></li>
+						<li><a href='color'>color</a></li>
+						<li><a href='#'>film</a></li>
+						<li><a href='#'>print</a></li>
+					</ul>
+				</li>
+				<li class='nav-item'>
+					<p>self</p>
+					<ul>
+						<li><a href="">tied up and tousled</a></li>
+						<li><a href="">solestruck - b/w kick</a></li>
+						<li><a href="">solestruck - ¥E§</a></li>
+						<li><a href="">bridge and burn</a></li>
+						<li><a href="">demimonde</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href='video'>video</a>
+				</li>
+			</ul>
+		</nav>
 		<div id='sliding-container'>
 			<header> 
 				<h2>meredith adelaide</h2>
@@ -32,37 +57,19 @@
 							<img src='' data-src='images/modeling/ryanmuirhead_mini.jpg' data-owidth='536' data-oheight='800' alt='ryanmuirhead_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide_mini.jpg' data-owidth='379' data-oheight='504' alt='meredithadelaide_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide5_mini.jpg' data-owidth='342' data-oheight='507' alt='meredithadelaide5_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide6_mini.jpg' data-owidth='338' data-oheight='506' alt='meredithadelaide6_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide9_mini.jpg' data-owidth='378' data-oheight='504' alt='meredithadelaide9_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
 							<img src='' data-src='images/modeling/meredithadelaide10_mini.jpg' data-owidth='1203' data-oheight='1812' alt='meredithadelaide10_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/meredithadelaide11_mini.jpg' data-owidth='1289' data-oheight='1812' alt='meredithadelaide11_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide12_mini.jpg' data-owidth='338' data-oheight='506' alt='meredithadelaide12_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
 							<img src='' data-src='images/modeling/meredithadelaide13_mini.jpg' data-owidth='360' data-oheight='506' alt='meredithadelaide13_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide22_mini.jpg' data-owidth='381' data-oheight='508' alt='meredithadelaide22_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/meredithadelaide23_mini.jpg' data-owidth='2000' data-oheight='1502' alt='meredithadelaide23_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/meredithadelaide24_mini.jpg' data-owidth='960' data-oheight='374' alt='meredithadelaide24_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/meredithadelaide24combine_mini.jpg' data-owidth='474' data-oheight='718' alt='meredithadelaide24combine_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/davisayer_mini.jpg' data-owidth='888' data-oheight='1110' alt='davisayer_mini.jpg' class='invisible'>
@@ -83,16 +90,22 @@
 							<img src='' data-src='images/modeling/la2_mini.jpg' data-owidth='1125' data-oheight='1500' alt='la2_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
+							<img src='' data-src='images/modeling/meredithadelaide129_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide129_mini.jpg' class='invisible'>
+						</li>	
+						<li class='placeholder'>
 							<img src='' data-src='images/modeling/1_mini.jpg' data-owidth='614' data-oheight='984' alt='1_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/2_mini.jpg' data-owidth='638' data-oheight='984' alt='2_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/3_mini.jpg' data-owidth='611' data-oheight='984' alt='3_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/3_mini.jpg' data-owidth='606' data-oheight='969' alt='3_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/5_mini.jpg' data-owidth='620' data-oheight='984' alt='5_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/5_mini.jpg' data-owidth='604' data-oheight='984' alt='5_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/meredithadelaide220_mini.jpg' data-owidth='379' data-oheight='1010' alt='meredithadelaide220_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/erich-mcvey-ginny-au-ethereal-wedding-ideas-ocean-driftwood-sea-full-length-veil.png' data-owidth='600' data-oheight='797' alt='erich-mcvey-ginny-au-ethereal-wedding-ideas-ocean-driftwood-sea-full-length-veil.png' class='invisible'>
@@ -113,10 +126,13 @@
 							<img src='' data-src='images/modeling/inside_mini.jpg' data-owidth='1828' data-oheight='1104' alt='inside_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/14_mini.jpg' data-owidth='539' data-oheight='984' alt='14_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/14_mini.jpg' data-owidth='526' data-oheight='984' alt='14_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/louie_mini.jpg' data-owidth='633' data-oheight='950' alt='louie_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/meredithadelaide65_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide65_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/nirav_1_mini.jpg' data-owidth='667' data-oheight='1000' alt='nirav_1_mini.jpg' class='invisible'>
@@ -135,7 +151,7 @@
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/nirav_6_mini.jpg' data-owidth='2989' data-oheight='4483' alt='nirav_6_mini.JPG' class='invisible'>
-						</li>		
+						</li>
 					</ul>
 				</div>	
 				<span id='icon-scroll-left'></span>
