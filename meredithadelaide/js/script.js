@@ -1,5 +1,7 @@
 (function(){
 	//refactor with a detectWidth function that returns toMobile, toDesktop, or the actual width
+	//remove white borders from affected pics
+	//figure out how to deal with small (height < 800) images
 
 	var menuOpen = 0,
 		contentLoaded = 0,
@@ -31,6 +33,15 @@
 			showVideo($item.next(),0);
 		}
 	}
+
+	$('.nav-item').hover( function(){
+			$(this).children('ul').slideDown("fast");
+			$(this).children('ul').css('z-index', '1');
+		}, function(){
+			$(this).children('ul').slideUp("fast");
+			$(this).children('ul').css('z-index', '0');
+		}
+	);
 
 	$(document).on('click','#icon-scroll-right',function(event){
 		var scroll = $('#content-pane').width() +6;

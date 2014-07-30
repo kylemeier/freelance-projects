@@ -44,7 +44,18 @@
   content: '\e601'; }
 
 #icon-scroll-right:after {
-  content: '\e602'; }
+  content: '\e601';
+  display: inline-block;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg); }
+
+.icon-dropdown:after {
+  content: '\e601';
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  display: inline-block;
+  position: relative;
+  top: 3px; }
 
 #icon-instagram:after {
   content: '\e600'; }
@@ -77,14 +88,16 @@
 
 body, a {
   font-family: 'helvetica-neue';
-  color: #7C8C8D;
   color: #2e2d2c; }
 
 body {
   background: #FAFAFA; }
 
-a:hover {
+span:hover, a:hover {
   color: #D6D6D6; }
+
+span:hover {
+  cursor: pointer; }
 
 li {
   list-style-type: none; }
@@ -117,9 +130,38 @@ header {
   padding-right: 10%; }
   .navbar-toggle li {
     float: left;
-    padding-right: 25px; }
-    .navbar-toggle li:last-child {
-      padding-right: 0; }
+    position: relative; }
+    .navbar-toggle li:hover p {
+      color: #D6D6D6; }
+    .navbar-toggle li a {
+      padding-left: 20px;
+      display: inline-block; }
+    .navbar-toggle li p {
+      padding: 0 20px;
+      cursor: pointer; }
+    .navbar-toggle li ul {
+      display: none;
+      border-radius: 0 0 5px 5px;
+      background: #fff;
+      border: 1px solid #e1e2e3;
+      border-top: 1px solid #fff;
+      position: absolute;
+      width: 200px;
+      left: -5px;
+      top: 50px; }
+      .navbar-toggle li ul li {
+        float: none;
+        padding-left: 10px;
+        padding-right: 0;
+        color: #D6D6D6; }
+        .navbar-toggle li ul li:last-child {
+          border-radius: 0 0 5px 5px; }
+        .navbar-toggle li ul li a {
+          position: relative;
+          width: 100%;
+          display: inline-block;
+          padding: 0 5px;
+          font-size: .8em; }
 
 .active {
   color: #C7C7C7; }
