@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class='page-container invisible'>
-		<?php include('../nav.html'); ?>
+		<?php include('../partials/nav.html'); ?>
 		<div id='sliding-container'>
 			<header> 
 				<h2>meredith adelaide</h2>
@@ -61,7 +61,7 @@
 				<span id='icon-scroll-right'></span>	
 			</div>
 		</div>
-		<?php include('../footer.html'); ?>
+		<?php include('../partials/footer.html'); ?>
 	</div>
 	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 	<script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js'></script>
