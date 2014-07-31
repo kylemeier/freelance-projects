@@ -34,14 +34,28 @@
 		}
 	}
 
+	//Dequeue
+	// $('.nav-item').hover( function(){
+	// 	if(!$(this).hasClass('animated')) {
+	// 		$(this).children('ul').dequeue().stop().slideDown("fast");
+	// 		$(this).children('ul').css('z-index', '1');
+	// 	}
+	// }, function(){
+	// 		$(this).addClass('animated');
+	// 		$(this).children('ul').slideUp("fast", function(){
+	// 			$(this).parent().removeClass('animated').dequeue();
+	// 		});
+	// 		$(this).children('ul').css('z-index', '0');
+	
+	// });
+
 	$('.nav-item').hover( function(){
-			$(this).children('ul').stop(true,true).slideDown("fast");
-			$(this).children('ul').css('z-index', '1');
-		}, function(){
-			$(this).children('ul').stop(true,true).slideUp("fast");
-			$(this).children('ul').css('z-index', '0');
-		}
-	);
+			$(this).children('ul').stop(true, false).slideDown("fast").css('z-index', '1');
+	}, function(){
+			$(this).children('ul').stop(true, false).css('z-index', '0').slideUp("fast", function(){
+				$(this).css('height', 'auto');
+			})
+	});
 
 	$(document).on('click','#icon-scroll-right',function(event){
 		var scroll = $('#content-pane').width() +6;
