@@ -35,10 +35,10 @@
 	}
 
 	$('.nav-item').hover( function(){
-			$(this).children('ul').slideDown("fast");
+			$(this).children('ul').stop(true,true).slideDown("fast");
 			$(this).children('ul').css('z-index', '1');
 		}, function(){
-			$(this).children('ul').slideUp("fast");
+			$(this).children('ul').stop(true,true).slideUp("fast");
 			$(this).children('ul').css('z-index', '0');
 		}
 	);
