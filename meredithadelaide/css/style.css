@@ -232,7 +232,7 @@ footer {
     font-size: .8em;
     float: left; }
 
-.video #content-container {
+.short-content #content-container {
   height: 60%; }
 
 iframe {
@@ -366,7 +366,7 @@ iframe {
         height: auto;
         background: #fff; }
 
-  .video #content-container {
+  .short-content #content-container {
     height: 100%; }
 
   footer {

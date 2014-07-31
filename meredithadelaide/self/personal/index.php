@@ -23,9 +23,6 @@
 							<img src="" data-src="../../images/self/personal/harmony_rose_mini.jpg" data-owidth="632" data-oheight="1000" alt="harmony_rose_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
-							<img src="" data-src="../../images/self/personal/2014-03-27 05.35.20 2_mini.jpg" data-owidth="1536" data-oheight="1024" alt="2014-03-27 05.35.20 2_mini.jpg" class='invisible'>
-						</li>
-						<li class="placeholder">
 							<img src="" data-src="../../images/self/personal/2014-03-27 05.35.21 1_mini.jpg" data-owidth="1024" data-oheight="1536" alt="2014-03-27 05.35.21 1_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
@@ -36,6 +33,9 @@
 						</li>
 						<li class="placeholder">
 							<img src="" data-src="../../images/self/personal/self_dark_mini.jpg" data-owidth="1500" data-oheight="1500" alt="self_dark_mini.jpg" class='invisible'>
+						</li>
+						<li class="placeholder">
+							<img src="" data-src="../../images/self/personal/2014-03-27 05.35.20 2_mini.jpg" data-owidth="1536" data-oheight="1024" alt="2014-03-27 05.35.20 2_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
 							<img src="" data-src="../../images/self/personal/self_dark1_mini.jpg" data-owidth="667" data-oheight="1000" alt="self_dark1_mini.jpg" class='invisible'>

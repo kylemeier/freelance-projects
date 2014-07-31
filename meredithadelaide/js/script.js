@@ -6,7 +6,7 @@
 	var menuOpen = 0,
 		contentLoaded = 0,
 		containerPercentage = .8,
-		containerPercentageVideo = 1,
+		containerPercentageShortAdjust = 1,
 		prevWidth = 0,
 		$content = $('#content'),
 		$contentItems = $('#content').find('img'),
@@ -146,7 +146,7 @@
 
 		var $windowHeight = $window.height(),
 			$windowWidth = $window.width(),
-			containerHeightStatic = $windowHeight * containerPercentage * containerPercentageVideo,
+			containerHeightStatic = $windowHeight * containerPercentage * containerPercentageShortAdjust,
 			containerWidthStatic = $windowWidth * containerPercentage,
 			containerDimension = 0;
 
@@ -245,11 +245,19 @@
 	 * Initilization function, runs all functions necessary to render page correctly on load
 	 */
 	function init(){
+
+		//fade in content
 		$pageContainer.removeClass('invisible');
 		$pageContainer.addClass('visible');
-		if(document.URL.search('video')>0){
-			containerPercentageVideo = .75;
-			$('body').addClass('video');
+
+		//check for pages that contain short content to adjust calculations
+		if(document.URL.search('film')>0 || document.URL.search('video')>0 || document.URL.search('print')>0){
+
+			//change default of 1 to .75 to shrink container by 25%
+			containerPercentageShortAdjust = .75;
+
+			//add a class for styling
+			$('body').addClass('short-content');
 		}
 		//Run config and tell it to load images
 		configImages(1);

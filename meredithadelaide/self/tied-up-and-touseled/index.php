@@ -20,12 +20,6 @@
 				<div id='content-pane'>
 					<ul id='content'>
 						<li class="placeholder">
-							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_1_mini.jpg" data-owidth="1359" data-oheight="1000" alt="tiedandtouseled_1_mini.jpg" class='invisible'>
-						</li>
-						<li class="placeholder">
-							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_2_mini.jpg" data-owidth="984" data-oheight="1592" alt="tiedandtouseled_2_mini.jpg" class='invisible'>
-						</li>
-						<li class="placeholder">
 							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_3_mini.jpg" data-owidth="1469" data-oheight="1000" alt="tiedandtouseled_3_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
@@ -36,6 +30,12 @@
 						</li>
 						<li class="placeholder">
 							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_6_mini.jpg" data-owidth="1500" data-oheight="1000" alt="tiedandtouseled_6_mini.jpg" class='invisible'>
+						</li>
+						<li class="placeholder">
+							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_1_mini.jpg" data-owidth="1359" data-oheight="1000" alt="tiedandtouseled_1_mini.jpg" class='invisible'>
+						</li>
+						<li class="placeholder">
+							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_2_mini.jpg" data-owidth="984" data-oheight="1592" alt="tiedandtouseled_2_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
 							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_7_mini.jpg" data-owidth="667" data-oheight="1000" alt="tiedandtouseled_7_mini.jpg" class='invisible'>
