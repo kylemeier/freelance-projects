@@ -1,15 +1,24 @@
 (function(){
 	//refactor with a detectWidth function that returns toMobile, toDesktop, or the actual width
-	//remove white borders from affected pics
-	//figure out how to deal with small (height < 800) images
+	//change mobile icon to span
+	//IE pictures off, doesn't recognize transform
+	//move last two from personal to tied up
 
 	var menuOpen = 0,
 		contentLoaded = 0,
 		containerPercentage = .8,
 		containerPercentageShortAdjust = 1,
 		prevWidth = 0,
+		onVideoScreen = document.URL.search('video')>0,
+		videoAspectRatio = 16/9,
+		elementMargin = 2,
+		numVideos = 0,
+		contentPaneHeight = 0,
+		contentPaneWidth = 0,
+		contentWidth = 0,
 		$content = $('#content'),
-		$contentItems = $('#content').find('img'),
+		$contentItems = $content.find('img'),
+		$contentPane = $('#content-pane'),
 		$pageContainer = $('.page-container'),
 		$window = $(window);
 
@@ -19,13 +28,13 @@
 	 */
 	function contentLoader($item,$windowWidth){
 
-		//When the item loads, make it visible so it can fade in
+		//when the item loads, make it visible so it can fade in
 		$item.bind('load', function(){
 			$item.addClass('visible');
 			$item.removeClass('invisible');
 		});
 
-		//Give the item a source to load
+		//give the item a source to load
 		$item.attr('src', $item.attr('data-src'));
 
 		//load videos if in mobile view
@@ -34,81 +43,48 @@
 		}
 	}
 
-	//Dequeue
-	// $('.nav-item').hover( function(){
-	// 	if(!$(this).hasClass('animated')) {
-	// 		$(this).children('ul').dequeue().stop().slideDown("fast");
-	// 		$(this).children('ul').css('z-index', '1');
-	// 	}
-	// }, function(){
-	// 		$(this).addClass('animated');
-	// 		$(this).children('ul').slideUp("fast", function(){
-	// 			$(this).parent().removeClass('animated').dequeue();
-	// 		});
-	// 		$(this).children('ul').css('z-index', '0');
-	
-	// });
+	function setVideoScroll(currentScroll, dir){
+		var videoWidth = contentPaneHeight * videoAspectRatio + elementMargin,
+			leftPadding = (contentPaneWidth - videoWidth)/2,
+			stopPoint = 0;
 
-	$('.nav-item').hover( function(){
-			$(this).children('ul').stop(true, false).slideDown("fast").css('z-index', '1');
-	}, function(){
-			$(this).children('ul').stop(true, false).css('z-index', '0').slideUp("fast", function(){
-				$(this).css('height', 'auto');
-			})
-	});
+		if(dir === 'left'){
 
-	$(document).on('click','#icon-scroll-right',function(event){
-		var scroll = $('#content-pane').width() +6;
-		event.preventDefault();
+			//loop end to front to check which video to bring to center of screen
+			for(var i = numVideos; i >= 0; i--){
 
-			$('#content-pane').animate({
-				scrollLeft: '+='+scroll
-			}, 700,'easeInOutQuad');
-	});
+				//calculate stop point for current video, rounding down to ensure no decimals are returned
+				stopPoint = Math.floor((videoWidth)*i - leftPadding);
+				
+				if(currentScroll > stopPoint){
 
-	$(document).on('click','#icon-scroll-left',function(event){
-		var scroll = $('#content-pane').width() +6;
-		event.preventDefault();
+					//return scroll amount
+					return currentScroll - stopPoint;
+				}
+			}
+		}else{
 
-			$('#content-pane').animate({
-				scrollLeft: '-='+scroll
-			}, 700,'easeInOutQuad');
-	});
+			//loop front to end to check which video to bring to center of screen
+			for(var i = 1; i <= numVideos; i++){
 
-	//Open mobile drawer nav if menu button is clicked
-	$(document).on('click','#icon-nav', function(event){
-		event.preventDefault();
-		if(menuOpen === 0){
-			$pageContainer.addClass('menu-open');
-			setTimeout(function(){
-				menuOpen = 1;
-			},500);
+				//calculate stop point for current video, rounding down to ensure no decimals are returned
+				stopPoint = Math.floor((videoWidth)*i - leftPadding);
+				
+				if(currentScroll < stopPoint){
+
+					//return scroll amount
+					return stopPoint - currentScroll;
+				}
+			}
 		}
-	});
-
-	//Close mobile drawer nav if content on left is clicked
-	$(document).on('click', '#sliding-container', function(){
-		if(menuOpen === 1){
-			$pageContainer.removeClass('menu-open');
-			setTimeout(function(){
-				menuOpen = 0;
-			},500);
-		}
-	});
-
-	function showVideo($item, autoPlay){
-		var videoURL = $item.attr('href');
-		$item.parent().append(
-			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
-		)
 	}
 
-	$(document).on('click','.play-video', function(event){
-		event.preventDefault();
-		$('iframe').remove();
-		$('.play-video').show();
-		showVideo($(this),1);
-	});
+	function showVideo($item, autoPlay){
+		var videoID = $item.attr('href');
+		$item.parent().append(
+			'<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+		)
+	}
 
 	/**
 	 * Set the height/width (dependent on current width) of the relevant content container element
@@ -122,8 +98,7 @@
 
 		var aspectRatio = $item.attr('data-owidth') / $item.attr('data-oheight'),
 			itemHeight = 0,
-			itemWidth = 0,
-			padding = 2;
+			itemWidth = 0;
 
 			//Check if mobile view is active
 			if($windowWidth < 800){
@@ -137,7 +112,7 @@
 				$item.parent().css('width','100%');
 
 				//Return the height plus the padding added by CSS that wasn't captured here
-				return itemHeight + padding;
+				return itemHeight + elementMargin;
 
 			}else{
 
@@ -148,7 +123,7 @@
 
 				//Return a negative value so caller function can know whether it 
 				// received back a height (positive number) or a width (negative number)
-				return -(itemWidth + padding);
+				return -(itemWidth + elementMargin);
 			}
 	}
 	
@@ -164,75 +139,58 @@
 			containerWidthStatic = $windowWidth * containerPercentage,
 			containerDimension = 0;
 
-		//Cycle through all image elements on page
+		//cycle through all image elements on page
 		$contentItems.each(function(){
 
 			var $this = $(this);
 
-			//If initializing, load images
+			//if initializing, load images
 			if(initializing){
 				contentLoader($this,$windowWidth);
 			}
 
-			if(toDesktop){
-				$('iframe').remove();
+			//check if user is on video page
+			if(onVideoScreen){
+
+				//if switching to desktop, remove all videos 
+				if(toDesktop){
+					$('iframe').remove();
+				}
+
+				//if switching to mobile, add all videos with autoplay turned off
+				if(toMobile){
+					showVideo($this.next(),0);
+				}
+
+				//iterate video count for scroll calculations
+				numVideos++;
 			}
 
-			if(toMobile){
-				showVideo($this.next(),0);
-			}
-
-			//Capture width or height of element
+			//capture width or height of element
 			//setDimension() sends back positive values for height and negative values for width
-			//This allows config() to not need any logic when calling setDimension()
+			//this allows configImages() to not need any logic when calling setDimension()
 			containerDimension += setDimension($windowWidth, containerHeightStatic, containerWidthStatic, $this);
 		});
 
 		//containerDimension being positive means:
 		// 1. setDimension() sent back a height
-		// 2. Page is in mobile view
+		// 2. page is in mobile view
 		if(containerDimension > 0){
 
-			//Set the page-container div to the appropriate height to fit all elements
+			//set the page-container div to the appropriate height to fit all elements
 			$pageContainer.height(containerDimension);
 
-			//Set the content div to fill its parent's width
+			//set the content div to fill its parent's width
 			$content.css('width','80%');
 
 		}else{
-			//Desktop view
-			//Revert width back to a positive number and set the width of the content div to fit all image/video elements
-			$content.width(-containerDimension);
+			//desktop view
+			//revert width back to a positive number and set the width of the content div to fit all image/video elements
+			//subtract out a margin to account for last element not having a right margin set
+			$content.width(-containerDimension - elementMargin);
 
-			//Set page container height to only fill the window
+			//set page container height to only fill the window
 			$pageContainer.css('height', '100%');
-		}
-	}
-
-	function configVideos(initializing){		
-		if($window.width() > 800){
-			console.log('desktop view');
-			var adjustment = 0;
-			if(initializing){
-				
-				adjustment = 1;
-			}else{
-				adjustment = 1;
-			}
-				var height = $('#content-pane').height()*adjustment,
-				width = height * (16/9),
-				contentWidth = width*5+25;
-
-			// console.log($('#content-pane').
-				// $('#content-pane').css('height','75%');
-				$('.video-wrapper').css('width',width);
-				// $('.video-wrapper').css('height',height);
-				$('#content').css('width',contentWidth);
-				// $('#content-pane').css('height',height);
-		}else{
-			$('#content-pane').css('width','100%');
-			$('#content').css('width','80%');
-			$('.video-wrapper').css('width','100%');
 		}
 	}
 
@@ -241,7 +199,7 @@
 		var toDesktop = 0,
 			toMobile = 0;
 
-		//remove all videos if user is switching from mobile view to desktop view
+		//set appropriate binary if user is switching to/from desktop or mobile view
 		if(prevWidth < 800 && $window.width() >= 800){
 			toDesktop = 1;
 		}
@@ -250,9 +208,104 @@
 			toMobile = 1;
 		}
 
+		//run config images to adjust sizing
 		configImages(0,toDesktop,toMobile);
+
+		//store content width
+		contentWidth = $content.width();
+
+		//store current content pane dimensions
+		contentPaneHeight = $contentPane.height();
+		contentPaneWidth = $contentPane.width();
+
+		//store current width in case of another browser resize
 		prevWidth = $window.width();
 
+	});
+
+	//Display navigation sub menus on hover
+	$('.nav-item').hover(function(){
+			$(this).children('ul').stop(true, false).slideDown("fast").css('z-index', '1');
+	}, function(){
+			$(this).children('ul').stop(true, false).css('z-index', '0').slideUp("fast", function(){
+				$(this).css('height', 'auto');
+			})
+	});	
+
+	//Scroll content pane right if right arrow clicked
+	$('#icon-scroll-right').click(function(){
+
+		var currentScroll = $contentPane.scrollLeft(),
+			scroll = 0;
+
+		//check if user is at right edge
+		if (currentScroll + contentPaneWidth < contentWidth){
+
+			//check if user is on video screen for scrolling based on video width, otherwise scroll based on pane width
+			onVideoScreen? scroll = setVideoScroll(currentScroll, 'right') : scroll = contentPaneWidth *.6;
+
+		}else{
+
+			//end function if user is at right edge
+			return;
+		}
+
+		//animate scroll
+		$contentPane.animate({
+			scrollLeft: '+='+scroll
+		}, 500,'easeInOutQuad');
+	});
+	
+	//Scroll content pane left if left arrow clicked
+	$('#icon-scroll-left').click(function(){
+
+		var currentScroll = $contentPane.scrollLeft(),
+			scroll = 0;
+
+		//check if user is at left edge
+		if (currentScroll > 0){
+
+			//check if user is on video screen for scrolling based on video width, otherwise scroll based on pane width
+			onVideoScreen? scroll = setVideoScroll(currentScroll, 'left') : scroll = contentPaneWidth *.6;
+
+		}else{
+
+			//end function if user is at left edge
+			return
+		}
+
+		//animate scroll
+		$contentPane.animate({
+			scrollLeft: '-='+scroll
+		}, 500,'easeInOutQuad');
+	});
+
+
+	$('.play-video').click(function(event){
+		event.preventDefault();
+		$('iframe').remove();
+		$('.play-video').show();
+		showVideo($(this),1);
+	});
+
+	//Open mobile drawer nav if menu button is clicked
+	$('#icon-nav').click(function(){
+		if(menuOpen === 0){
+			$pageContainer.addClass('menu-open');
+			setTimeout(function(){
+				menuOpen = 1;
+			},500);
+		}
+	});
+
+	//Close mobile drawer nav if content on left is clicked
+	$('#sliding-container').click(function(){
+		if(menuOpen === 1){
+			$pageContainer.removeClass('menu-open');
+			setTimeout(function(){
+				menuOpen = 0;
+			},500);
+		}
 	});
 
 	/**
@@ -265,7 +318,7 @@
 		$pageContainer.addClass('visible');
 
 		//check for pages that contain short content to adjust calculations
-		if(document.URL.search('film')>0 || document.URL.search('video')>0 || document.URL.search('print')>0){
+		if(onVideoScreen || document.URL.search('film')>0 || document.URL.search('print')>0){
 
 			//change default of 1 to .75 to shrink container by 25%
 			containerPercentageShortAdjust = .75;
@@ -275,6 +328,11 @@
 		}
 		//Run config and tell it to load images
 		configImages(1);
+
+		//store dimensions
+		contentPaneHeight = $contentPane.height();
+		contentPaneWidth = $contentPane.width();
+		contentWidth = $content.width();
 	}
 	init();	
 })();

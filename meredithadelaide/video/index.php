@@ -37,48 +37,49 @@
 			</ul>
 		</nav>
 		<div id='sliding-container'>
-			<header> 
-				<h2> <a href='../'>meredith adelaide</a></h2>
-				<a href='#' id='icon-nav'></a>
-			</header>
+			<?php include('../partials/header.html'); ?>
 			<div id='content-container'>
 				<div id='content-pane'>
-					<!--images not in a ul in order to resize them responsively with minimal CSS -->
-					<div id='content'>
-						<div class='placeholder'>
+					<ul id='content'>
+						<li class='placeholder'>
+							<img alt='portlandia-nerd-psa.jpg' src='' data-src='../images/video/portlandia-fart-patio.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
+							<a href='RxJdzsjoYLs' class='play-video'>
+								<div class='icon-play-button'></div>
+							</a>
+						</li>
+						<li class='placeholder'>
 							<img alt='portlandia-nerd-psa.jpg' src='' data-src='../images/video/portlandia-nerd-psa.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/nR6CY3pFjYM' class='play-video'>
+							<a href='XJyMT4ZVQEc' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
-						</div>
-						<div class='placeholder'>
+						</li>
+						<li class='placeholder'>
 							<img alt='alialujah-choir-a-house-a-home.jpg' src='' data-src='../images/video/alialujah-choir-a-house-a-home.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/t_X29ja3BiQ' class='play-video'>
+							<a href='t_X29ja3BiQ' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
-						</div>
-						<div class='placeholder'>
+						</li>
+						<li class='placeholder'>
 							<img alt='meredith-adelaide-411-the-experimental-job.jpg' src='' data-src='../images/video/meredith-adelaide-411-the-experimental-job.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/urZVChipkK0' class='play-video'>
+							<a href='urZVChipkK0' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
-						</div>
-						<div class='placeholder'>
+						</li>
+						<li class='placeholder'>
 							<img alt='meredith-adelaide-gone-2012.jpg' src='' data-src='../images/video/meredith-adelaide-gone-2012.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/INbLkNdUbY4' class='play-video'>
+							<a href='INbLkNdUbY4' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
-						</div>
-						<div class='placeholder'>
+						</li>
+						<li class='placeholder'>
 							<img alt='anya-marina-notice-me.jpg' src='' data-src='../images/video/anya-marina-notice-me.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/ZiHK3lLYN5I' class='play-video'>
+							<a href='ZiHK3lLYN5I' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
-						</div>
-					</div>
+						</li>
+					</ul>
 				</div>	
-				<a href='#' id='icon-scroll-left'></a>
-				<a href='#' id='icon-scroll-right'></a>	
+			<?php include('../partials/scrollicons.html'); ?>
 			</div>
 		</div>
 		<?php include('../partials/footer.html'); ?>

@@ -14,7 +14,7 @@
 		<div id='sliding-container'>
 			<header> 
 				<h2> <a href='../../'>meredith adelaide</a></h2>
-				<a href='#' id='icon-nav'></a>
+				<div id='icon-nav'></div>
 			</header>
 			<div id='content-container'>
 				<div id='content-pane'>
