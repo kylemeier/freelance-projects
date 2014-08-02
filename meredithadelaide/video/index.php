@@ -43,37 +43,37 @@
 					<ul id='content'>
 						<li class='placeholder'>
 							<img alt='portlandia-fart-patio.jpg' src='' data-src='../images/video/portlandia-fart-patio.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<div data-url='//www.youtube.com/embed/nR6CY3pFjYM' class='play-video'>
+							<a href='//www.youtube.com/embed/RxJdzsjoYLs' class='play-video'>
 								<div class='icon-play-button'></div>
-							</div>
+							</a>
 						</li>
 						<li class='placeholder'>
 							<img alt='portlandia-nerd-psa.jpg' src='' data-src='../images/video/portlandia-nerd-psa.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='XJyMT4ZVQEc' class='play-video'>
+							<a href='//www.youtube.com/embed/XJyMT4ZVQEc' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>
 						<li class='placeholder'>
 							<img alt='alialujah-choir-a-house-a-home.jpg' src='' data-src='../images/video/alialujah-choir-a-house-a-home.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='t_X29ja3BiQ' class='play-video'>
+							<a href='//www.youtube.com/embed/t_X29ja3BiQ' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>
 						<li class='placeholder'>
 							<img alt='meredith-adelaide-411-the-experimental-job.jpg' src='' data-src='../images/video/meredith-adelaide-411-the-experimental-job.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='urZVChipkK0' class='play-video'>
+							<a href='//www.youtube.com/embed/urZVChipkK0' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>
 						<li class='placeholder'>
 							<img alt='meredith-adelaide-gone-2012.jpg' src='' data-src='../images/video/meredith-adelaide-gone-2012.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='INbLkNdUbY4' class='play-video'>
+							<a href='//www.youtube.com/embed/INbLkNdUbY4' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>
 						<li class='placeholder'>
 							<img alt='anya-marina-notice-me.jpg' src='' data-src='../images/video/anya-marina-notice-me.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='ZiHK3lLYN5I' class='play-video'>
+							<a href='//www.youtube.com/embed/ZiHK3lLYN5I' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>

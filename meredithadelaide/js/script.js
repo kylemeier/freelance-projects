@@ -79,6 +79,12 @@
 		}
 	}
 
+	function showVideo($item, autoPlay){
+		var videoURL = $item.attr('href');
+		$item.parent().append(
+			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+		)
+	}
 	// function showVideo($item, autoPlay){
 	// 	var videoID = $item.attr('href');
 	// 	$item.parent().append(
@@ -288,19 +294,12 @@
 		}, 500,'easeInOutQuad');
 	});
 
-function showVideo($item, autoPlay){
-var videoURL = $item.attr('data-url');
-$item.parent().append(
-'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
-)
-}
-
-$(document).on('click','.play-video', function(event){
-event.preventDefault();
-$('iframe').remove();
-$('.play-video').show();
-showVideo($(this),1);
-});
+	$('.play-video').click(function(event){
+		event.preventDefault();
+		$('iframe').remove();
+		$('.play-video').show();
+		showVideo($(this),1);
+	});
 
 	// $('.play-video').click(function(event){
 	// 	event.preventDefault();

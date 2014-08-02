@@ -305,13 +305,17 @@ footer{
 	}
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb:horizontal{
 	background: #2E2D2C;
 	border-radius:5px;
 }
 
 ::-webkit-scrollbar{
 	background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar:vertical{
+	display:none;
 }
 
 .short-content #content-container{
