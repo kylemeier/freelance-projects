@@ -42,8 +42,8 @@
 				<div id='content-pane'>
 					<ul id='content'>
 						<li class='placeholder'>
-							<img alt='portlandia-nerd-psa.jpg' src='' data-src='../images/video/portlandia-fart-patio.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='RxJdzsjoYLs' class='play-video'>
+							<img alt='portlandia-fart-patio.jpg' src='' data-src='../images/video/portlandia-fart-patio.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
+							<a href='//www.youtube.com/embed/nR6CY3pFjYM' class='play-video'>
 								<div class='icon-play-button'></div>
 							</a>
 						</li>

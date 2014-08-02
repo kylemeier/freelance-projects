@@ -79,13 +79,21 @@
 		}
 	}
 
+	// function showVideo($item, autoPlay){
+	// 	var videoID = $item.attr('href');
+	// 	$item.parent().append(
+	// 		'<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+	// 	)
+	// }
+// '<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+	
 	function showVideo($item, autoPlay){
-		var videoID = $item.attr('href');
+		var videoURL = $item.attr('href');
 		$item.parent().append(
-			'<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
+
 		)
 	}
-
 	/**
 	 * Set the height/width (dependent on current width) of the relevant content container element
 	 * @param {number} $windowWidth: Width of the view window
@@ -280,13 +288,18 @@
 		}, 500,'easeInOutQuad');
 	});
 
-
-	$('.play-video').click(function(event){
+	$(document).on('click','.play-video', function(event){
 		event.preventDefault();
 		$('iframe').remove();
 		$('.play-video').show();
 		showVideo($(this),1);
 	});
+	// $('.play-video').click(function(event){
+	// 	event.preventDefault();
+	// 	$('iframe').remove();
+	// 	$('.play-video').show();
+	// 	showVideo($(this),1);
+	// });
 
 	//Open mobile drawer nav if menu button is clicked
 	$('#icon-nav').click(function(){
