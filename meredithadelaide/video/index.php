@@ -43,9 +43,9 @@
 					<ul id='content'>
 						<li class='placeholder'>
 							<img alt='portlandia-fart-patio.jpg' src='' data-src='../images/video/portlandia-fart-patio.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
-							<a href='//www.youtube.com/embed/nR6CY3pFjYM' class='play-video'>
+							<div data-url='//www.youtube.com/embed/nR6CY3pFjYM' class='play-video'>
 								<div class='icon-play-button'></div>
-							</a>
+							</div>
 						</li>
 						<li class='placeholder'>
 							<img alt='portlandia-nerd-psa.jpg' src='' data-src='../images/video/portlandia-nerd-psa.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
