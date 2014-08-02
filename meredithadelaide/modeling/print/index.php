@@ -12,10 +12,7 @@
 	<div class='page-container invisible'>
 		<?php include('../../partials/modelingnav.html'); ?>
 		<div id='sliding-container'>
-			<header> 
-				<h2> <a href='../../'>meredith adelaide</a></h2>
-				<div id='icon-nav'></div>
-			</header>
+			<?php include('../../partials/header.html'); ?>
 			<div id='content-container'>
 				<div id='content-pane'>
 					<ul id='content'>
@@ -36,8 +33,7 @@
 						</li>
 					</ul>
 				</div>	
-				<span id='icon-scroll-left'></span>
-				<span id='icon-scroll-right'></span>	
+				<?php include('../../partials/scrollicons.html'); ?>	
 			</div>
 		</div>
 		<?php include('../../partials/footer.html'); ?>

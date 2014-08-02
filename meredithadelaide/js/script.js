@@ -1,12 +1,7 @@
 (function(){
-	//refactor with a detectWidth function that returns toMobile, toDesktop, or the actual width
-	//change mobile icon to span
-	//IE pictures off, doesn't recognize transform
-	//move last two from personal to tied up
 
 	var menuOpen = 0,
-		contentLoaded = 0,
-		containerPercentage = .8,
+		containerPercentage = 0.8,
 		containerPercentageShortAdjust = 1,
 		prevWidth = 0,
 		onVideoScreen = document.URL.search('video')>0,
@@ -43,33 +38,46 @@
 		}
 	}
 
+	/**
+	 * Set scroll distance for arrow clicks on video screen
+	 * @param {num} currentScroll:   Current left scroll distance of content pane
+	 * @param {text} dir:            Direction of movement (left/right)
+	 * @return {number} the scroll distance
+	 */
 	function setVideoScroll(currentScroll, dir){
+
 		var videoWidth = contentPaneHeight * videoAspectRatio + elementMargin,
 			leftPadding = (contentPaneWidth - videoWidth)/2,
-			stopPoint = 0;
+			stopPoint = 0,
+			i;
 
+		//check direction
 		if(dir === 'left'){
 
 			//loop end to front to check which video to bring to center of screen
-			for(var i = numVideos; i >= 0; i--){
+			for(i = numVideos; i >= 0; i--){
 
 				//calculate stop point for current video, rounding down to ensure no decimals are returned
 				stopPoint = Math.floor((videoWidth)*i - leftPadding);
 				
+				//check if current stop point is to the left of the current scroll position
 				if(currentScroll > stopPoint){
 
 					//return scroll amount
 					return currentScroll - stopPoint;
 				}
 			}
+
+		//if user is moving right
 		}else{
 
 			//loop front to end to check which video to bring to center of screen
-			for(var i = 1; i <= numVideos; i++){
+			for(i = 1; i <= numVideos; i++){
 
 				//calculate stop point for current video, rounding down to ensure no decimals are returned
 				stopPoint = Math.floor((videoWidth)*i - leftPadding);
 				
+				//check if current stop point is to the right of the current scroll position
 				if(currentScroll < stopPoint){
 
 					//return scroll amount
@@ -78,28 +86,21 @@
 			}
 		}
 	}
-
+	/**
+	 * Create and append iframe for video 
+	 * @param  {element} $item:   The clicked anchor element
+	 * @param  {binary} autoPlay: Do/do not auto play video upon load
+	 */
 	function showVideo($item, autoPlay){
+
 		var videoURL = $item.attr('href');
+
+		//Append iframe given the video URL and autoplay setting
 		$item.parent().append(
 			'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
-		)
+		);
 	}
-	// function showVideo($item, autoPlay){
-	// 	var videoID = $item.attr('href');
-	// 	$item.parent().append(
-	// 		'<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'\" frameBorder=\"0\" allowfullscreen></iframe>'
-	// 	)
-	// }
-// '<iframe width=\"100%\" height=\"100%\" src=\"//www.youtube.com/embed/'+videoID+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
-	
-	// function showVideo($item, autoPlay){
-	// 	var videoURL = $item.attr('href');
-	// 	$item.parent().append(
-	// 		'<iframe width=\"100%\" height=\"100%\" src=\"'+videoURL+'?theme=light&color=white&autohide=1&autoplay='+autoPlay+'\" frameBorder=\"0\" allowfullscreen></iframe>'
 
-	// 	)
-	// }
 	/**
 	 * Set the height/width (dependent on current width) of the relevant content container element
 	 * @param {number} $windowWidth: Width of the view window
@@ -237,13 +238,15 @@
 
 	});
 
-	//Display navigation sub menus on hover
+	//Display navigation sub menu on hover
 	$('.nav-item').hover(function(){
-			$(this).children('ul').stop(true, false).slideDown("fast").css('z-index', '1');
+			$(this).children('ul').stop(true, false).css('z-index', '1').slideDown("fast");
 	}, function(){
 			$(this).children('ul').stop(true, false).css('z-index', '0').slideUp("fast", function(){
+
+				//Ensure sub menu retains correct height
 				$(this).css('height', 'auto');
-			})
+			});
 	});	
 
 	//Scroll content pane right if right arrow clicked
@@ -256,7 +259,11 @@
 		if (currentScroll + contentPaneWidth < contentWidth){
 
 			//check if user is on video screen for scrolling based on video width, otherwise scroll based on pane width
-			onVideoScreen? scroll = setVideoScroll(currentScroll, 'right') : scroll = contentPaneWidth *.6;
+			if(onVideoScreen){
+				scroll = setVideoScroll(currentScroll, 'right');
+			}else{
+				scroll = contentPaneWidth *0.6;
+			} 
 
 		}else{
 
@@ -280,12 +287,16 @@
 		if (currentScroll > 0){
 
 			//check if user is on video screen for scrolling based on video width, otherwise scroll based on pane width
-			onVideoScreen? scroll = setVideoScroll(currentScroll, 'left') : scroll = contentPaneWidth *.6;
+			if(onVideoScreen){
+				scroll = setVideoScroll(currentScroll, 'left');
+			}else{
+				scroll = contentPaneWidth *0.6;
+			}
 
 		}else{
 
 			//end function if user is at left edge
-			return
+			return;
 		}
 
 		//animate scroll
@@ -294,24 +305,27 @@
 		}, 500,'easeInOutQuad');
 	});
 
+	//Display appropriate video on click
 	$('.play-video').click(function(event){
 		event.preventDefault();
+
+		//remove all currently display iframes
 		$('iframe').remove();
-		$('.play-video').show();
+
+		//show video and tell it to autoplay
 		showVideo($(this),1);
 	});
 
-	// $('.play-video').click(function(event){
-	// 	event.preventDefault();
-	// 	$('iframe').remove();
-	// 	$('.play-video').show();
-	// 	showVideo($(this),1);
-	// });
-
 	//Open mobile drawer nav if menu button is clicked
 	$('#icon-nav').click(function(){
+
+		//ensure menu isn't already open
 		if(menuOpen === 0){
+
+			//add class for CSS animations
 			$pageContainer.addClass('menu-open');
+
+			//allow animation to finish before updating menuOpen
 			setTimeout(function(){
 				menuOpen = 1;
 			},500);
@@ -320,8 +334,14 @@
 
 	//Close mobile drawer nav if content on left is clicked
 	$('#sliding-container').click(function(){
+
+		//ensure menu is open
 		if(menuOpen === 1){
+
+			//remove class for CSS animations
 			$pageContainer.removeClass('menu-open');
+
+			//allow animation to finish before updating menuOpen
 			setTimeout(function(){
 				menuOpen = 0;
 			},500);
@@ -341,12 +361,12 @@
 		if(onVideoScreen || document.URL.search('film')>0 || document.URL.search('print')>0){
 
 			//change default of 1 to .75 to shrink container by 25%
-			containerPercentageShortAdjust = .75;
+			containerPercentageShortAdjust = 0.75;
 
 			//add a class for styling
 			$('body').addClass('short-content');
 		}
-		//Run config and tell it to load images
+		//run config and tell it to load images
 		configImages(1);
 
 		//store dimensions

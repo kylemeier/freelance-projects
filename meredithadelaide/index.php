@@ -40,7 +40,7 @@
 		<div id='sliding-container'>
 			<header> 
 				<h2> <a href='#'>meredith adelaide</a></h2>
-				<a href='#' id='icon-nav'></a>
+				<div id='icon-nav'></div>
 			</header>
 			<div id='content-container'>
 				<div id='content-pane'>
@@ -155,8 +155,7 @@
 						</li>
 					</ul>
 				</div>	
-				<span id='icon-scroll-left'></span>
-				<span id='icon-scroll-right'></span>	
+				<?php include('partials/scrollicons.html'); ?>
 			</div>
 		</div>
 		<?php include('partials/footer.html'); ?>

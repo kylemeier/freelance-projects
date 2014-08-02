@@ -37,7 +37,10 @@
 			</ul>
 		</nav>
 		<div id='sliding-container'>
-			<?php include('../partials/header.html'); ?>
+		<header> 
+			<h2> <a href='../'>meredith adelaide</a></h2>
+			<div id='icon-nav'></div>
+		</header>
 			<div id='content-container'>
 				<div id='content-pane'>
 					<ul id='content'>

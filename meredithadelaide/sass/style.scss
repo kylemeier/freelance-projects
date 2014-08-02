@@ -1,4 +1,3 @@
-//social icons break at a certain width
 @font-face {
 	font-family: 'helvetica-neue';
 	src: url('../fonts/HelveticaNeue-UltraLight.eot');
@@ -41,11 +40,11 @@
 #icon-scroll-left, #icon-scroll-right{
 	position:absolute;
 	top:50%;
+	-ms-transform: translate(0, -50%);
 	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
 	font-size:3em;
 	border-radius:100%;
-
 }
 
 #icon-scroll-left{
@@ -153,22 +152,27 @@ header{
 	z-index:2;
 	font-size:1.1em;
 	padding-right:10%;
+
 	li{
 		float:left;
 		position:relative;
+
 		&:hover{
 			p{
 				color:#D6D6D6;
 			}
 		}
+
 		a{
 			padding-left:20px;
 			display:inline-block;
 		}
+
 		p{
 			padding:0 20px;
 			cursor: pointer;	
 		}
+
 		ul{
 			display:none;
 			border-radius:0 0 5px 5px;
@@ -179,30 +183,23 @@ header{
 			width:150px;
 			left:-5px;
 			top:50px;
+
 			li{
 				float:none;
 				padding-right:0;
 				padding-left:10px;
 				color:#D6D6D6;
-				&:hover{
-					// background:#2e2d2c;
-					// background: rgba(46,45,44,.9);
-					// background: #fff;
-					// background: rgba(255,255,255,.8);
 
-					// color:#fff;
-				}
 				&:last-child{
 					border-radius:0 0 5px 5px;
 				}
+
 				a{
 					position:relative;
 					width:100%;
 					display:inline-block;
 					padding:0 5px;
 					font-size:.8em;
-					// padding:0 100px;
-					// padding-right:100px;
 				}
 			}
 		}
@@ -254,9 +251,11 @@ img{
 	float:left;
 	margin-right:2px;
 	position:relative;
+
 	&:last-child{
 		margin-right:0;
 	}
+
 	a{
 		position:absolute;
 		top:0;
@@ -343,7 +342,6 @@ iframe{
 	#icon-scroll-left, #icon-scroll-right{
 		display:none;
 	}
-
 
 	#icon-nav:after{
 		float:right;
@@ -440,11 +438,13 @@ iframe{
 		z-index:0;
 		padding:0;
 		line-height:55px;
+
 		ul{
 			padding-top:30px;
 			width:0;
 			height:100%;
 			font-size:1.9em;
+
 			li{
 				ul{
 					background:none;
@@ -453,7 +453,6 @@ iframe{
 					font-size:.5em;
 					line-height:30px;
 					top:0;
-					// left:20px;
 					padding:0;
 					width:250px;
 					li{
@@ -468,75 +467,77 @@ iframe{
 		}
 
 	}
+
 	a{
 		color:#fff;
 	}
 
-#content-container{
-	width:100%;
-	height:100%;
-	margin:0;
-	overflow:visible;
-	padding-top:100px;
-	background:#FAFAFA;
-}
-
-#content-pane{
-	width:100%;
-	height:100%;
-	overflow:visible;
-
-	#content{
-		position:relative;
+	#content-container{
+		width:100%;
 		height:100%;
-		padding:0 10%;
-
-		img{
-			width:100%;
-			padding: 0 0 2px 0;
-			height:auto;
-			background:#fff;
-		}	
+		margin:0;
+		overflow:visible;
+		padding-top:100px;
+		background:#FAFAFA;
 	}
-}
 
-		.short-content #content-container{
+	#content-pane{
+		width:100%;
+		height:100%;
+		overflow:visible;
+
+		#content{
+			position:relative;
 			height:100%;
+			padding:0 10%;
+
+			img{
+				width:100%;
+				padding: 0 0 2px 0;
+				height:auto;
+				background:#fff;
+			}	
+		}
+	}
+
+	.short-content #content-container{
+		height:100%;
+	}
+
+	footer{
+		-webkit-transition: opacity .5s;
+		-moz-transition: opacity .5s;
+		-o-transition: opacity .5s;
+		transition: opacity .5s;
+		opacity:0;
+		position:fixed;
+		right:12.5px;
+		top:380px;
+		width:225px;
+		color:#fff;
+		background: none;
+		border-top:2px solid #fff;
+		text-align:center;
+		padding:0;
+		line-height:30px;
+
+		h2{
+			position:relative;
+			bottom:30px;
+			float:none;
+			color:#fff;
+			font-size:1.1em;
 		}
 
-		footer{
-			-webkit-transition: opacity .5s;
-			-moz-transition: opacity .5s;
-			-o-transition: opacity .5s;
-			transition: opacity .5s;
-			opacity:0;
-			position:fixed;
-			right:12.5px;
-			top:380px;
-			width:225px;
-			color:#fff;
-			background: none;
-			border-top:2px solid #fff;
-			text-align:center;
-			padding:0;
-			line-height:30px;
+		ul{
+			position:relative;
+			bottom:30px;
+		}
 
-			h2{
-				position:relative;
-				bottom:30px;
-				float:none;
-				color:#fff;
-				font-size:1.1em;
-			}
-			ul{
-				position:relative;
-				bottom:30px;
-			}
-
-			a{
-				font-size:.9em;
-			}
-		
+		a{
+			font-size:.9em;
+		}
+	
 		h3{
 			position:relative;
 			float:none;
@@ -548,10 +549,11 @@ iframe{
 @media(max-width: 799px) and (max-height:450px){
 	.navbar-toggle{
 		line-height:35px;
+
 		ul{
 			position:absolute;
-			// top:-25px;
 			font-size:1.2em;
+
 			li{
 				ul{
 					li{
@@ -562,8 +564,8 @@ iframe{
 			}
 		}
 	}
+
 	footer{
 		display:none;
 	}
-
 }
