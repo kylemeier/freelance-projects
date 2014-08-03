@@ -18,10 +18,10 @@
 				<div id='content-pane'>
 					<ul id='content'>
 						<li class="placeholder">
-							<img src="" data-src="../../images/self/personal/white_4_mini.jpg" data-owidth="667" data-oheight="1000" alt="white_4_mini.jpg" class='invisible'>
+							<img src="" data-src="../../images/self/tiedandtouseled/white_4_mini.jpg" data-owidth="667" data-oheight="1000" alt="white_4_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
-							<img src="" data-src="../../images/self/personal/z_titleimageplain_mini.jpg" data-owidth="683" data-oheight="1000" alt="z_titleimageplain_mini.jpg" class='invisible'>
+							<img src="" data-src="../../images/self/tiedandtouseled/z_titleimageplain_mini.jpg" data-owidth="683" data-oheight="1000" alt="z_titleimageplain_mini.jpg" class='invisible'>
 						</li>
 						<li class="placeholder">
 							<img src="" data-src="../../images/self/tiedandtouseled/tiedandtouseled_3_mini.jpg" data-owidth="1469" data-oheight="1000" alt="tiedandtouseled_3_mini.jpg" class='invisible'>
