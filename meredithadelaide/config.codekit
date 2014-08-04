@@ -2,6 +2,15 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "17682",
 "files": {
+	"\/contact\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/contact\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/reset.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -867,28 +876,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/self\/personal\/white_4_mini.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 48257,
-		"inputAbbreviatedPath": "\/images\/self\/personal\/white_4_mini.jpg",
-		"outputAbbreviatedPath": "\/images\/self\/personal\/white_4_mini.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/self\/personal\/z_titleimageplain_mini.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 54008,
-		"inputAbbreviatedPath": "\/images\/self\/personal\/z_titleimageplain_mini.jpg",
-		"outputAbbreviatedPath": "\/images\/self\/personal\/z_titleimageplain_mini.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/self\/solestruckbwkick\/solestruck_1_mini.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -1138,6 +1125,28 @@
 		"initialSize": 88631,
 		"inputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/tiedandtouseled_9_mini.jpg",
 		"outputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/tiedandtouseled_9_mini.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/self\/tiedandtouseled\/white_4_mini.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48257,
+		"inputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/white_4_mini.jpg",
+		"outputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/white_4_mini.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/self\/tiedandtouseled\/z_titleimageplain_mini.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54008,
+		"inputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/z_titleimageplain_mini.jpg",
+		"outputAbbreviatedPath": "\/images\/self\/tiedandtouseled\/z_titleimageplain_mini.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1454,7 +1463,7 @@
 	"iconImageName": "pencil_yellow"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
@@ -1584,7 +1593,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
@@ -2020,7 +2029,7 @@
 	"markdownEnableFootnotes": 0,
 	"markdownEnableSmartyPants": 1,
 	"markdownExpandTabs": 1,
-	"reloadFileURLs": 0,
+	"reloadFileURLs": 1,
 	"sassAutoOutputPathEnabled": 1,
 	"sassAutoOutputPathFilenamePattern": "*.css",
 	"sassAutoOutputPathRelativePath": "..\/css",

@@ -19,15 +19,17 @@
 						<li><a href='../modeling/black-and-white'>black and white</a></li>
 						<li><a href='../modeling/color'>color</a></li>
 						<li><a href='../modeling/film'>film</a></li>
+						<li><a href='../modeling/concept'>concept</a></li>
 						<li><a href='../modeling/print'>print</a></li>
 					</ul>
 				</li>
 				<li class='nav-item'>
 					<p>self</p>
 					<ul>
-						<li><a href='../self/tied-up-and-touseled'>tied up and touseled</a></li>
 						<li><a href='../self/solestruck-bwkick'>solestruck - b/w kick</a></li>
 						<li><a href='../self/solestruck-yes'>solestruck - ¥E§</a></li>
+						<li><a href='../self/tied-up-and-touseled'>tied up and touseled</a></li>
+						<li><a href='../self/rg-designs'>r/g designs</a></li>
 						<li><a href='../self/bridge-and-burn'>bridge and burn</a></li>
 						<li><a href='../self/demimonde'>demimonde</a></li>
 						<li><a href='../self/personal'>personal</a></li>
@@ -36,7 +38,16 @@
 				<li>
 					<a href='#'>video</a>
 				</li>
+				<li>
+					<ul id='contact'>
+						<li><a href='http://instagram.com/meredithadelaide' target='_blank' id='icon-instagram'></a></li>
+						<li><a href='https://www.facebook.com/meredithadelaide' target='_blank' id='icon-facebook'></a></li>
+						<li><a href='https://twitter.com/immodeling' target='_blank' id='icon-twitter'></a></li>
+						<li><a href='mailto:meredith.adelaide@gmail.com' id='icon-email'></a></li>
+					</ul>
+				</li>
 			</ul>
+			<div id='close-menu'></div>
 		</nav>
 		<div id='sliding-container'>
 		<header> 
@@ -76,6 +87,11 @@
 								<div class='icon-play-button'></div>
 							</a>
 						</li>
+						<li class='placeholder'>
+							<img alt='modify-watches.jpg' src='' data-src='../images/video/modify-watches.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
+							<a href='//www.youtube.com/embed/ORwFvu-nDV0' class='play-video'>
+								<div class='icon-play-button'></div>
+							</a>
 						<li class='placeholder'>
 							<img alt='anya-marina-notice-me.jpg' src='' data-src='../images/video/anya-marina-notice-me.jpg' data-owidth='2612' data-oheight='1470' class='invisible'>
 							<a href='//www.youtube.com/embed/ZiHK3lLYN5I' class='play-video'>

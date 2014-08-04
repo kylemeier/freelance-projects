@@ -19,15 +19,17 @@
 						<li><a href='modeling/black-and-white'>black and white</a></li>
 						<li><a href='modeling/color'>color</a></li>
 						<li><a href='modeling/film'>film</a></li>
+						<li><a href='modeling/concept'>concept</a></li>
 						<li><a href='modeling/print'>print</a></li>
 					</ul>
 				</li>
 				<li class='nav-item'>
 					<p>self</p>
 					<ul>
-						<li><a href="self/tied-up-and-touseled">tied up and touseled</a></li>
 						<li><a href="self/solestruck-bwkick">solestruck - b/w kick</a></li>
 						<li><a href="self/solestruck-yes">solestruck - ¥E§</a></li>
+						<li><a href="self/tied-up-and-touseled">tied up and tousled</a></li>
+						<li><a href="self/rg-designs">r/g designs</a></li>
 						<li><a href="self/bridge-and-burn">bridge and burn</a></li>
 						<li><a href="self/demimonde">demimonde</a></li>
 						<li><a href="self/personal">personal</a></li>
@@ -36,7 +38,16 @@
 				<li>
 					<a href='video'>video</a>
 				</li>
+				<li>
+					<ul id='contact'>
+						<li><a href='http://instagram.com/meredithadelaide' target='_blank' id='icon-instagram'></a></li>
+						<li><a href='https://www.facebook.com/meredithadelaide' target='_blank' id='icon-facebook'></a></li>
+						<li><a href='https://twitter.com/immodeling' target='_blank' id='icon-twitter'></a></li>
+						<li><a href='mailto:meredith.adelaide@gmail.com' id='icon-email'></a></li>
+					</ul>
+				</li>
 			</ul>
+			<div id='close-menu'></div>
 		</nav>
 		<div id='sliding-container'>
 			<header> 
@@ -47,16 +58,7 @@
 				<div id='content-pane'>
 					<ul id='content'>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/1a_mini.jpg' data-owidth='433' data-oheight='659' alt='1a_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/Editorial-Photographer-Erich-McVey-with-Model-Meredith-Adelaide-on-Film-4pp_w800_h600_mini.jpg' data-owidth='800' data-oheight='600' alt='Editorial-Photographer-Erich-McVey-with-Model-Meredith-Adelaide-on-Film-4pp_w800_h600_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/IMG953338_mini.jpg' data-owidth='1080' data-oheight='1080' alt='IMG953338_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/ryanmuirhead_mini.jpg' data-owidth='536' data-oheight='800' alt='ryanmuirhead_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide10_mini.jpg' data-owidth='1203' data-oheight='1812' alt='meredithadelaide10_mini.jpg' class='invisible'>
@@ -65,22 +67,10 @@
 							<img src='' data-src='images/modeling/color/meredithadelaide11_mini.jpg' data-owidth='1289' data-oheight='1812' alt='meredithadelaide11_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide13_mini.jpg' data-owidth='360' data-oheight='506' alt='meredithadelaide13_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/meredithadelaide23_mini.jpg' data-owidth='2000' data-oheight='1502' alt='meredithadelaide23_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide24combine_mini.jpg' data-owidth='474' data-oheight='718' alt='meredithadelaide24combine_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/davisayer_mini.jpg' data-owidth='888' data-oheight='1110' alt='davisayer_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/IMG_6370_mini.jpg' data-owidth='1080' data-oheight='1080' alt='IMG_6370_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/IMG954346_mini.jpg' data-owidth='998' data-oheight='998' alt='IMG954346_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/la_mini.jpg' data-owidth='1125' data-oheight='1500' alt='la_mini.jpg' class='invisible'>
@@ -92,19 +82,34 @@
 							<img src='' data-src='images/modeling/color/la2_mini.jpg' data-owidth='1125' data-oheight='1500' alt='la2_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide129_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide129_mini.jpg' class='invisible'>
-						</li>	
+							<img src='' data-src='images/modeling/color/louie_mini.jpg' data-owidth='633' data-oheight='950' alt='louie_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide65_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide65_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/color/davisayer_mini.jpg' data-owidth='888' data-oheight='1110' alt='davisayer_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/color/IMG_6370_mini.jpg' data-owidth='1080' data-oheight='1080' alt='IMG_6370_mini.jpg' class='invisible'>
+						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/blackandwhite/1_mini.jpg' data-owidth='614' data-oheight='984' alt='1_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/2_mini.jpg' data-owidth='638' data-oheight='984' alt='2_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide129_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide129_mini.jpg' class='invisible'>
+						</li>	
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/blackandwhite/14_mini.jpg' data-owidth='526' data-oheight='984' alt='14_mini.jpg' class='invisible'>
+						</li>
+						<li class='placeholder'>
+							<img src='' data-src='images/modeling/blackandwhite/5_mini.jpg' data-owidth='604' data-oheight='984' alt='5_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/3_mini.jpg' data-owidth='606' data-oheight='969' alt='3_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/5_mini.jpg' data-owidth='604' data-oheight='984' alt='5_mini.jpg' class='invisible'>
+							<img src='' data-src='images/modeling/color/2_mini.jpg' data-owidth='638' data-oheight='984' alt='2_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/meredithadelaide220_mini.jpg' data-owidth='379' data-oheight='1010' alt='meredithadelaide220_mini.jpg' class='invisible'>
@@ -119,25 +124,7 @@
 							<img src='' data-src='images/modeling/color/erich-mcvey-ginny-oceanside-wedding-ideas-full-length-lace-veil.png' data-owidth='598' data-oheight='797' alt='erich-mcvey-ginny-oceanside-wedding-ideas-full-length-lace-veil.png' class='invisible'>
 						</li>
 						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/IMG_2463_mini.JPG' data-owidth='1330' data-oheight='1330' alt='IMG_2463_mini.JPG' class='invisible'>
-						</li>
-						<li class='placeholder'>
 							<img src='' data-src='images/modeling/color/IMG_2466_mini.JPG' data-owidth='1536' data-oheight='1484' alt='IMG_2466_mini.JPG' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/inside_mini.jpg' data-owidth='1828' data-oheight='1104' alt='inside_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/14_mini.jpg' data-owidth='526' data-oheight='984' alt='14_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/color/louie_mini.jpg' data-owidth='633' data-oheight='950' alt='louie_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/meredithadelaide65_mini.jpg' data-owidth='338' data-oheight='1014' alt='meredithadelaide65_mini.jpg' class='invisible'>
-						</li>
-						<li class='placeholder'>
-							<img src='' data-src='images/modeling/blackandwhite/nirav_1_mini.jpg' data-owidth='667' data-oheight='1000' alt='nirav_1_mini.jpg' class='invisible'>
 						</li>
 						<li class='placeholder'>
 							<img src='' data-src='images/modeling/blackandwhite/nirav_2_mini.jpg' data-owidth='3792' data-oheight='5682' alt='nirav_2_mini.JPG' class='invisible'>

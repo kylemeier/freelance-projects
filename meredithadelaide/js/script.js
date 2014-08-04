@@ -15,6 +15,7 @@
 		$contentItems = $content.find('img'),
 		$contentPane = $('#content-pane'),
 		$pageContainer = $('.page-container'),
+		$closeMenu = $('#close-menu'),
 		$window = $(window);
 
 	/**
@@ -239,15 +240,40 @@
 	});
 
 	//Display navigation sub menu on hover
-	$('.nav-item').hover(function(){
-			$(this).children('ul').stop(true, false).css('z-index', '1').slideDown("fast");
-	}, function(){
-			$(this).children('ul').stop(true, false).css('z-index', '0').slideUp("fast", function(){
+	$('.nav-item').hover(function(event){
 
-				//Ensure sub menu retains correct height
+		var $this = $(this);
+
+		//place current nav item on top
+		$this.css('z-index', '2');
+
+		//place close menu div on top of everything except currently selected sub menu 
+		$closeMenu.css('z-index', '1');
+
+		//slide down sub menu
+		$this.children('ul').stop(true, false).slideDown("fast");
+
+	}, function(){
+
+		var $this = $(this);
+
+		//ensure this nav item is below any currently hovered nav items
+		$this.css('z-index', '0');
+
+		//place close menu behind all items
+		$closeMenu.css('z-index', '-1');
+
+		//slide up sub menu
+		$this.children('ul').stop(true, false).slideUp("fast", function(){
+				
+				//ensure sub menu retains correct height
 				$(this).css('height', 'auto');
 			});
 	});	
+
+	//Remove hover state on currently selected nav item (for touch devices)
+	//Does not work without this event listener listening for a click
+	$closeMenu.click(function(){});
 
 	//Scroll content pane right if right arrow clicked
 	$('#icon-scroll-right').click(function(){
